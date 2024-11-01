@@ -1,0 +1,146 @@
+.zeek-addons-button-inner,.zeek-addons-button-inner.style1{display: inline-block;}
+
+
+
+/* Common button styles */
+.zeek-addons-button {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.zeek-addons-button:focus {
+  outline: none;
+}
+.zeek-addons-button > span {
+  vertical-align: middle;
+}
+
+.zeek-addons-button-inner--stl, .zeek-addons-button-inner--shutter-1, .zeek-addons-button-inner--shutter-2, .zeek-addons-button-inner--str, .zeek-addons-button-inner--none,
+.zeek-addons-button-inner--stt, .zeek-addons-button-inner--stb{
+  padding: 0.8em 1.6em;
+  overflow: hidden;
+}
+
+.zeek-addons-button-wrapper .zeek-addons-button {
+  border-radius: 2px;
+  border-color: #000;
+}
+
+/*  shutter Animation  */
+.zeek-addons-button-inner--shutter-1::before{
+  -webkit-transform: scale3d(0.1, 1, 1);
+  transform: scale3d(0.1, 1, 1);
+}
+.zeek-addons-button-inner--shutter-2::before{
+  -webkit-transform: scale3d(1, 0.1, 0.1);
+  transform: scale3d(1, 0.1, 0.1);
+}
+.zeek-addons-button-inner--shutter-1::before,
+.zeek-addons-button-inner--shutter-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.8s, opacity 0.8s;
+  transition: transform 0.8s, opacity 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.zeek-addons-button-inner--shutter-1,
+.zeek-addons-button-inner--shutter-2,
+.zeek-addons-button-inner--shutter-1::before,
+.zeek-addons-button-inner--shutter-2::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.zeek-addons-button-inner--shutter-1:hover,
+.zeek-addons-button-inner--shutter-2:hover {
+  color: #fff;
+  border-color: #37474f;
+}
+
+.zeek-addons-button-inner--shutter-1:hover::before,
+.zeek-addons-button-inner--shutter-2:hover::before {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Slide animations */
+.zeek-addons-button-inner--stl::before,
+.zeek-addons-button-inner--str::before,
+.zeek-addons-button-inner--stt::before,
+.zeek-addons-button-inner--stb::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  margin: -15px 0 0 1px;
+  height: 50px;
+  border-radius: 0;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: scale3d(1, 2, 1);
+  transform: scale3d(1, 2, 1);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.9,1);
+}
+
+/* seprate  */
+.zeek-addons-button-inner--stt::before{
+  top: 180%;
+  left: 0%;
+  width:430px;
+}
+
+/* seprate  */
+.zeek-addons-button-inner--stl::before{
+  top: 50%;
+  left: 100%;
+  width: 30px;
+}
+
+/* seprate  */
+.zeek-addons-button-inner--str::before{
+  top: 70%;
+  left: -50%;
+  width: 30px;
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+
+/* seprate  */
+.zeek-addons-button-inner--stb::before{
+  top: -150%;
+  left: 100%;
+  width: 330px;
+}
+
+.zeek-addons-button-inner--stl,
+.zeek-addons-button-inner--str,
+.zeek-addons-button-inner--stt,
+.zeek-addons-button-inner--stb
+ {
+  vertical-align: middle;
+}
+.zeek-addons-button-inner--stl > span,
+.zeek-addons-button-inner--str > span,
+.zeek-addons-button-inner--stt > span,
+.zeek-addons-button-inner--stb > span {
+  vertical-align: middle;
+}
+.zeek-addons-button-inner--stl:hover::before,
+.zeek-addons-button-inner--str:hover::before,
+.zeek-addons-button-inner--stt:hover::before,
+.zeek-addons-button-inner--stb:hover::before {
+  -webkit-transform: scale3d(9, 9, 1);
+  transform: scale3d(9, 9, 1);
+}
